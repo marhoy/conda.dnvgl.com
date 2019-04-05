@@ -1,6 +1,7 @@
-import os
+import subprocess
 
 
 def conda_index():
-    output = os.popen("conda index /condarepo/stable").read()
-    return output
+    output = subprocess.run("conda index /condarepo/stable", capture_output=True, shell=True)
+
+    return "StdErr:\n{}\n\nStdOut:\n{}".format(output.stderr, output.stdout)

@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 ACI_PERS_RESOURCE_GROUP=conda.dnvgl.com
 ACI_PERS_STORAGE_ACCOUNT_NAME=condarepo
 ACI_PERS_SHARE_NAME=condarepo
@@ -19,4 +21,3 @@ az container create \
     --azure-file-volume-account-key $STORAGE_KEY \
     --azure-file-volume-share-name $ACI_PERS_SHARE_NAME \
     --azure-file-volume-mount-path /condarepo/
-

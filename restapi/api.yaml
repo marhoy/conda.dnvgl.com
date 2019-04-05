@@ -1,0 +1,29 @@
+#
+# When making changes to this file, evaluate the contents at: https://editor.swagger.io/
+#
+
+openapi: "3.0.2"
+
+info:
+  version: 1.0.0
+  title: API for updating the conda index
+  description: This API contains endpoints updating (and possibly querying?) the conda index
+  contact:
+    name: Responsible Person
+    email: someone@some.where.com
+
+
+paths:
+  /conda_index:
+
+    get:
+      operationId: restapi.endpoints.conda_index
+      summary: Update the conda index
+
+      responses:
+        '200':
+          description: The output from the "conda index" command
+          content:
+            text/plain; charset=utf-8:
+              schema:
+                type: string
